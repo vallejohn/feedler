@@ -759,8 +759,6 @@ module.exports = __webpack_require__(36);
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
-// window.$ = window.jQuery = require('./bs4/jquery');
-// window.Tether = require('./bs4/tether');
 __webpack_require__(9);
 
 // window.Vue = require('vue');

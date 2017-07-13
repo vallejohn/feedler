@@ -1,8 +1,3 @@
-// Bootstrap overrides
-//
-// Copy variables from `_variables.scss` to this file to override default values
-// without modifying source files.
-
 // Variables
 //
 // Copy settings from this file into the provided `_custom.scss` to override
@@ -108,11 +103,6 @@ $teal:   #5bc0de !default;
 $pink:   #ff5b77 !default;
 $purple: #613d7c !default;
 
-//custom
-$teal-500: #009688;
-$light-green-700: #689F38;
-$light-blue-600: #039BE5;
-
 // Create grayscale
 $gray-dark:                 #292b2c !default;
 $gray:                      #464a4c !default;
@@ -120,13 +110,18 @@ $gray-light:                #636c72 !default;
 $gray-lighter:              #eceeef !default;
 $gray-lightest:             #f7f7f9 !default;
 
+// Custom colors
+$material-teal-500:         #009688;
+$material-grey-200:         #eeeeee;
+$material-blue-grey-900:    #37474f;
+
 // Reassign color vars to semantic color scheme
-$brand-primary:             $teal-500;
-$brand-success:             $light-green-700;
-$brand-info:                $light-blue-600 !default;
+$brand-primary:             $blue !default;
+$brand-success:             $green !default;
+$brand-info:                $teal !default;
 $brand-warning:             $orange !default;
 $brand-danger:              $red !default;
-$brand-inverse:             $teal-500 !default;
+$brand-inverse:             $material-teal-500;
 
 
 // Options
@@ -152,50 +147,49 @@ $spacer:   1rem !default;
 $spacer-x: $spacer !default;
 $spacer-y: $spacer !default;
 $spacers: (
-        0: (
-                x: 0,
-                y: 0
-        ),
-        1: (
-                x: ($spacer-x * .25),
-                y: ($spacer-y * .25)
-        ),
-        2: (
-                x: ($spacer-x * .5),
-                y: ($spacer-y * .5)
-        ),
-        3: (
-                x: $spacer-x,
-                y: $spacer-y
-        ),
-        4: (
-                x: ($spacer-x * 1.5),
-                y: ($spacer-y * 1.5)
-        ),
-        5: (
-                x: ($spacer-x * 3),
-                y: ($spacer-y * 3)
-        )
+  0: (
+    x: 0,
+    y: 0
+  ),
+  1: (
+    x: ($spacer-x * .25),
+    y: ($spacer-y * .25)
+  ),
+  2: (
+    x: ($spacer-x * .5),
+    y: ($spacer-y * .5)
+  ),
+  3: (
+    x: $spacer-x,
+    y: $spacer-y
+  ),
+  4: (
+    x: ($spacer-x * 1.5),
+    y: ($spacer-y * 1.5)
+  ),
+  5: (
+    x: ($spacer-x * 3),
+    y: ($spacer-y * 3)
+  )
 ) !default;
 $border-width: 1px !default;
 
-// Custom btn border width
-$btn-border-width: 2px;
-
 // This variable affects the `.h-*` and `.w-*` classes.
 $sizes: (
-        25: 25%,
-        50: 50%,
-        75: 75%,
-        100: 100%
+  25: 25%,
+  50: 50%,
+  75: 75%,
+  100: 100%
 ) !default;
 
 // Body
 //
 // Settings for the `<body>` element.
 
-$body-bg:       #ececec !default;
-$body-color:    #424242 !default;
+$teal-500:      #009688;
+
+$body-bg:       $material-grey-200; // Custom
+$body-color:    $gray-dark !default;
 $inverse-bg:    $gray-dark !default;
 $inverse-color: $gray-lighter !default;
 
@@ -204,10 +198,10 @@ $inverse-color: $gray-lighter !default;
 //
 // Style anchor elements.
 
-$link-color:            #424242 !default;
+$link-color:            $brand-primary !default;
 $link-decoration:       none !default;
-$link-hover-color:      $teal-500 !default;
-$link-hover-decoration: none !default;
+$link-hover-color:      darken($link-color, 15%) !default;
+$link-hover-decoration: underline !default;
 
 
 // Grid breakpoints
@@ -216,11 +210,11 @@ $link-hover-decoration: none !default;
 // adapting to different screen sizes, for use in media queries.
 
 $grid-breakpoints: (
-        xs: 0,
-        sm: 576px,
-        md: 768px,
-        lg: 992px,
-        xl: 1200px
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
 ) !default;
 @include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
 @include _assert-starts-at-zero($grid-breakpoints);
@@ -231,10 +225,10 @@ $grid-breakpoints: (
 // Define the maximum width of `.container` for different screen sizes.
 
 $container-max-widths: (
-        sm: 540px,
-        md: 720px,
-        lg: 960px,
-        xl: 1140px
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px
 ) !default;
 @include _assert-ascending($container-max-widths, "$container-max-widths");
 
@@ -246,11 +240,11 @@ $container-max-widths: (
 $grid-columns:               12 !default;
 $grid-gutter-width-base:     30px !default;
 $grid-gutter-widths: (
-        xs: $grid-gutter-width-base,
-        sm: $grid-gutter-width-base,
-        md: $grid-gutter-width-base,
-        lg: $grid-gutter-width-base,
-        xl: $grid-gutter-width-base
+  xs: $grid-gutter-width-base,
+  sm: $grid-gutter-width-base,
+  md: $grid-gutter-width-base,
+  lg: $grid-gutter-width-base,
+  xl: $grid-gutter-width-base
 ) !default;
 
 // Fonts
@@ -267,7 +261,7 @@ $font-size-lg:   1.25rem !default;
 $font-size-sm:   .875rem !default;
 $font-size-xs:   .75rem !default;
 
-$font-weight-normal: 400 !default;
+$font-weight-normal: normal !default;
 $font-weight-bold: bold !default;
 
 $font-weight-base: $font-weight-normal !default;
@@ -282,9 +276,9 @@ $font-size-h6: 1rem !default;
 
 $headings-margin-bottom: ($spacer / 2) !default;
 $headings-font-family:   inherit !default;
-$headings-font-weight:   60 !default;
+$headings-font-weight:   700;
 $headings-line-height:   1.1 !default;
-$headings-color:         #424242 !default;
+$headings-color:         $material-blue-grey-900;
 
 $display1-size: 6rem !default;
 $display2-size: 5.5rem !default;
@@ -302,7 +296,7 @@ $lead-font-weight: 300 !default;
 
 $small-font-size: 80% !default;
 
-$text-muted: #9c9c9c !default;
+$text-muted: $gray-light !default;
 
 $abbr-border-color: $gray-light !default;
 
@@ -331,7 +325,7 @@ $list-inline-padding: 5px !default;
 $line-height-lg:         (4 / 3) !default;
 $line-height-sm:         1.5 !default;
 
-$border-radius:          .25rem !default;
+$border-radius:          .25rem;
 $border-radius-lg:       .3rem !default;
 $border-radius-sm:       .2rem !default;
 
@@ -434,7 +428,7 @@ $input-bg-disabled:              $gray-lighter !default;
 
 $input-color:                    $gray !default;
 $input-border-color:             rgba($black,.15) !default;
-$input-btn-border-width:         $btn-border-width !default; // For form controls and buttons
+$input-btn-border-width:         $border-width !default; // For form controls and buttons
 $input-box-shadow:               inset 0 1px 1px rgba($black,.075) !default;
 
 $input-border-radius:            $border-radius !default;
@@ -442,8 +436,8 @@ $input-border-radius-lg:         $border-radius-lg !default;
 $input-border-radius-sm:         $border-radius-sm !default;
 
 $input-bg-focus:                 $input-bg !default;
-$input-border-focus:             $brand-primary !default;
-$input-box-shadow-focus:         $input-box-shadow, $input-border-focus !default;
+$input-border-focus:             lighten($brand-primary, 25%) !default;
+$input-box-shadow-focus:         $input-box-shadow, rgba($input-border-focus, .6) !default;
 $input-color-focus:              $input-color !default;
 
 $input-color-placeholder:        $gray-light !default;
@@ -549,12 +543,12 @@ $custom-file-box-shadow:    inset 0 .2rem .4rem rgba($black,.05) !default;
 $custom-file-button-color:  $custom-file-color !default;
 $custom-file-button-bg:     $gray-lighter !default;
 $custom-file-text: (
-        placeholder: (
-                en: "Choose file..."
-        ),
-        button-label: (
-                en: "Browse"
-        )
+  placeholder: (
+    en: "Choose file..."
+  ),
+  button-label: (
+    en: "Browse"
+  )
 ) !default;
 
 
@@ -630,7 +624,7 @@ $navbar-inverse-hover-color:           rgba($white,.75) !default;
 $navbar-inverse-active-color:          rgba($white,1) !default;
 $navbar-inverse-disabled-color:        rgba($white,.25) !default;
 $navbar-inverse-toggler-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-inverse-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E"), "#", "%23") !default;
-$navbar-inverse-toggler-border:        rgba($white,.1) !default;
+$navbar-inverse-toggler-border:        none;
 
 $navbar-light-color:                rgba($black,.5) !default;
 $navbar-light-hover-color:          rgba($black,.7) !default;
@@ -720,8 +714,8 @@ $state-danger-border:            darken($state-danger-bg, 5%) !default;
 
 // Cards
 
-$card-spacer-x:            1.25rem !default;
-$card-spacer-y:            .3rem !default;
+$card-spacer-x:            .75rem;
+$card-spacer-y:            .25rem !default;
 $card-border-width:        1px !default;
 $card-border-radius:       $border-radius !default;
 $card-border-color:        rgba($black,.125) !default;
