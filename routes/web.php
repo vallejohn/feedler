@@ -11,14 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
-
-Route::get('/profile', function () {
-    return view('profile.index');
-});
+Route::get('/', 'HomeController@index');
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

@@ -1,76 +1,47 @@
-@extends('layouts.app')
+@extends('master')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Register</div>
-                <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('register') }}">
-                        {{ csrf_field() }}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
 
-                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 control-label">Name</label>
+            </div>
+            <div class="col-md-4">
 
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
+                <h4 class="pt-5">Join Feedler!</h4>
+                <hr>
+                <form action="/register" method="post">
+                    {{ csrf_field() }}
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="name" name="name" placeholder="name">
+                        <small class="text-danger">{{ $errors->first('name') }}</small>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="username" name="username" placeholder="username">
+                        <small class="text-danger">{{ $errors->first('username') }}</small>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="email" name="email" placeholder="email">
+                        <small class="text-danger">{{ $errors->first('email') }}</small>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" id="password" name="password" placeholder="password">
+                        <small class="text-danger">{{ $errors->first('password') }}</small>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" placeholder="confirm password">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block"><strong>Sign up</strong></button>
+                    </div>
+                </form>
 
-                                @if ($errors->has('name'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
-
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Register
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                <div class="small text-muted">
+                    By signing up, you agree to the <a href="">Terms of Service</a> and <a href="">Privacy Policy</a>,
+                    including Cookie Use. Others will be able to find you by email or
+                    phone number when provided.
                 </div>
             </div>
         </div>
     </div>
-</div>
 @endsection
