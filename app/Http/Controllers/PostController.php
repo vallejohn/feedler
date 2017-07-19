@@ -3,10 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+use App\Type;
+use App\User;
+use App\Category;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -24,7 +32,10 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        $types = Type::All();
+        $categories = Category::all();
+
+        return view('posts.create', compact('types', 'categories'));
     }
 
     /**
@@ -35,7 +46,24 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'title' => 'required|min:2|max:255',
+            'subtitle' => 'required|min:2|max:255',
+            'type_id' => 'required',
+            'category_id' => 'required',
+            'body' => 'required|min:10',
+        ]);
+
+        Post::create([
+            'title' => $request->input('title'),
+            'subtitle' => $request->input('subtitle'),
+            'type_id' => $request->input('type_id'),
+            'category_id' => $request->input('category_id'),
+            'user_id' => auth()->user()->id,
+            'body' => $request->input('body'),
+        ]);
+
+        return redirect('/');
     }
 
     /**

@@ -18,33 +18,33 @@
                     </div>
                 </div>
             </div>
-
             {{-- Post --}}
-            <div class="media mb-2">
-                <img class="d-flex mr-2 rounded-circle hidden-md-down" style="width:64px; height:64px" src="http://surfacegallery.com.au/sites/surfacegallery/media/2648.jpg" alt="Generic placeholder image">
-                <div class="media-body">
-                    <div class="card">
-                        <div class="card-block">
-                            <h6 class="mt-0">Praesent eu tellus quis orci fermentum sollicitudin</h6>
-                            <div class="d-flex flex-row mb-2 text-muted small">
-                                <div>Daniel Woodrell</div>
-                                <div class="pl-3"><i class="fa fa-clock-o"></i> 5 months ago</div>
-                            </div>
-                            <p class="small">
-                                Cras sit amet nibh libero, Cras purus odio, vestibulum in vulputate a
-                                Cras sit amet nibh libero, Cras purus odio, vestibulum in vulputate at...
-                            </p>
-                            <div class="d-flex flex-row text-muted small">
-                                <div><i class="fa fa-thumbs-up"></i> 146 Likes</div>
-                                <div class="pl-3"><i class="fa fa-comment"></i> 65 Comments</div>
-                                <div class="ml-auto">
-                                    <a href="">Article</a>
+            @foreach ($posts as $post)
+                <div class="media mb-2">
+                    <img class="d-flex mr-2 rounded-circle hidden-md-down" style="width:64px; height:64px" src="http://surfacegallery.com.au/sites/surfacegallery/media/2648.jpg" alt="Generic placeholder image">
+                    <div class="media-body">
+                        <div class="card">
+                            <div class="card-block">
+                                <h6 class="mt-0">{{ $post->title }}</h6>
+                                <div class="d-flex flex-row mb-2 text-muted small">
+                                    <div>{{ $post->user->name }}</div>
+                                    <div class="pl-3"><i class="fa fa-clock-o"></i> {{ $post->created_at->diffForHumans() }}</div>
+                                </div>
+                                <p class="small">
+                                    {{str_limit($post->body, 100)  }}
+                                </p>
+                                <div class="d-flex flex-row text-muted small">
+                                    <div><i class="fa fa-thumbs-up"></i> 146 Likes</div>
+                                    <div class="pl-3"><i class="fa fa-comment"></i> 65 Comments</div>
+                                    <div class="ml-auto">
+                                        <a href="">{{ $post->type->name }}</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            @endforeach
             {{-- End of Post --}}
         </div>
 
