@@ -7,7 +7,8 @@
                 <div class="mr-auto p-0 mb-4"><h5 class="text-muted">Latests</h5></div>
                 <div>
                     <div class="btn-group">
-                        <button type="button" class="btn btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <button type="button" class="btn btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
                             Filter
                         </button>
                         <div class="dropdown-menu dropdown-menu-right">
@@ -21,14 +22,18 @@
             {{-- Post --}}
             @foreach ($posts as $post)
                 <div class="media mb-2">
-                    <img class="d-flex mr-2 rounded-circle hidden-md-down" style="width:64px; height:64px" src="http://surfacegallery.com.au/sites/surfacegallery/media/2648.jpg" alt="Generic placeholder image">
+                    <img class="d-flex mr-2 rounded-circle hidden-md-down" style="width:64px; height:64px"
+                         src="http://surfacegallery.com.au/sites/surfacegallery/media/2648.jpg"
+                         alt="Generic placeholder image">
                     <div class="media-body">
                         <div class="card">
                             <div class="card-block">
                                 <h6 class="mt-0"><a href="/posts/{{ $post->id }}">{{ $post->title }}</a></h6>
                                 <div class="d-flex flex-row mb-2 text-muted small">
                                     <div>{{ $post->user->name }}</div>
-                                    <div class="pl-3"><i class="fa fa-clock-o"></i> {{ $post->created_at->diffForHumans() }}</div>
+                                    <div class="pl-3"><i
+                                                class="fa fa-clock-o"></i> {{ $post->created_at->diffForHumans() }}
+                                    </div>
                                 </div>
                                 <p class="small">
                                     {{str_limit($post->body, 100)  }}
@@ -59,7 +64,9 @@
 
             {{-- Card Post --}}
             <div class="card mb-4">
-                <img class="card-img-top" style="height:180px" src="http://www.dickson-constant.com/medias/images/catalogue/api/m654-grey-680.jpg" alt="Card image cap">
+                <img class="card-img-top" style="height:180px"
+                     src="http://www.dickson-constant.com/medias/images/catalogue/api/m654-grey-680.jpg"
+                     alt="Card image cap">
                 <div class="card-block">
                     <h4 class="card-title">Praesent eu tellus quis orci fermentum sollicitudin</h4>
                     <p class="card-text">
@@ -69,7 +76,8 @@
 
                     <div class="d-flex justify-content-start">
                         <div>
-                            <img src="http://surfacegallery.com.au/sites/surfacegallery/media/2648.jpg" class="rounded-circle" style="height:36px; width:36px">
+                            <img src="http://surfacegallery.com.au/sites/surfacegallery/media/2648.jpg"
+                                 class="rounded-circle" style="height:36px; width:36px">
                         </div>
                         <div class="pl-2 text-muted align-self-center small">
                             Daniel Woodrell
