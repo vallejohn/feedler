@@ -25,7 +25,7 @@
                     <div class="media-body">
                         <div class="card">
                             <div class="card-block">
-                                <h6 class="mt-0">{{ $post->title }}</h6>
+                                <h6 class="mt-0"><a href="/posts/{{ $post->id }}">{{ $post->title }}</a></h6>
                                 <div class="d-flex flex-row mb-2 text-muted small">
                                     <div>{{ $post->user->name }}</div>
                                     <div class="pl-3"><i class="fa fa-clock-o"></i> {{ $post->created_at->diffForHumans() }}</div>

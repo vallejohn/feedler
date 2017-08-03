@@ -49,17 +49,11 @@
                         </div>
                     </div>
 
-                    <div class="form-group row">
-                        <label for="category" class="col-sm-2 col-form-label">Content</label>
-                        <div class="col-sm-10">
-                            <textarea class="form-control" id="exampleTextarea" rows="3" name="body" required></textarea>
-                        </div>
+                    <div class="form-group">
+                        <textarea class="form-control" placeholder="Content Here" id="exampleTextarea" rows="3" name="body" required></textarea>
                     </div>
 
                     <div class="d-flex justify-content-end">
-                        {{-- <div class="form-group">
-                            <button type="submit" class="btn btn-primary">Save</button>
-                        </div> --}}
                         <div class="form-group ml-2">
                             <button type="submit" class="btn btn-success">Publish</button>
                         </div>
