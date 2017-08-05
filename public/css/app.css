@@ -369,7 +369,7 @@ body {
   font-weight: normal;
   line-height: 1.5;
   color: #292b2c;
-  background-color: #eeeeee;
+  background-color: #fff;
 }
 
 [tabindex="-1"]:focus {
@@ -578,9 +578,9 @@ h6,
 .h6 {
   margin-bottom: 0.5rem;
   font-family: inherit;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 1.1;
-  color: #37474f;
+  color: inherit;
 }
 
 h1,
@@ -724,7 +724,7 @@ mark,
 
 .img-thumbnail {
   padding: 0.25rem;
-  background-color: #eeeeee;
+  background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 0.25rem;
   -webkit-transition: all 0.2s ease-in-out;
@@ -2595,7 +2595,7 @@ pre code {
 }
 
 .table .table {
-  background-color: #eeeeee;
+  background-color: #fff;
 }
 
 .table-sm th,
@@ -2701,7 +2701,7 @@ pre code {
 }
 
 .thead-inverse th {
-  color: #eeeeee;
+  color: #fff;
   background-color: #292b2c;
 }
 
@@ -2711,14 +2711,14 @@ pre code {
 }
 
 .table-inverse {
-  color: #eeeeee;
+  color: #fff;
   background-color: #292b2c;
 }
 
 .table-inverse th,
 .table-inverse td,
 .table-inverse thead th {
-  border-color: #eeeeee;
+  border-color: #fff;
 }
 
 .table-inverse.table-bordered {
@@ -4169,8 +4169,8 @@ tbody.collapse.show {
 }
 
 .custom-control-input:focus ~ .custom-control-indicator {
-  -webkit-box-shadow: 0 0 0 1px #eeeeee, 0 0 0 3px #0275d8;
-          box-shadow: 0 0 0 1px #eeeeee, 0 0 0 3px #0275d8;
+  -webkit-box-shadow: 0 0 0 1px #fff, 0 0 0 3px #0275d8;
+          box-shadow: 0 0 0 1px #fff, 0 0 0 3px #0275d8;
 }
 
 .custom-control-input:active ~ .custom-control-indicator {
@@ -4401,8 +4401,8 @@ tbody.collapse.show {
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
   color: #464a4c;
-  background-color: #eeeeee;
-  border-color: #ddd #ddd #eeeeee;
+  background-color: #fff;
+  border-color: #ddd #ddd #fff;
 }
 
 .nav-tabs .dropdown-menu {
@@ -4904,7 +4904,7 @@ tbody.collapse.show {
 }
 
 .navbar-inverse .navbar-toggler {
-  border-color: none;
+  border-color: rgba(255, 255, 255, 0.1);
 }
 
 .navbar-inverse .navbar-toggler-icon {
@@ -4933,15 +4933,15 @@ tbody.collapse.show {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
-  padding: 0.75rem;
+  padding: 1.25rem;
 }
 
 .card-title {
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.75rem;
 }
 
 .card-subtitle {
-  margin-top: -0.125rem;
+  margin-top: -0.375rem;
   margin-bottom: 0;
 }
 
@@ -4954,7 +4954,7 @@ tbody.collapse.show {
 }
 
 .card-link + .card-link {
-  margin-left: 0.75rem;
+  margin-left: 1.25rem;
 }
 
 .card > .list-group:first-child .list-group-item:first-child {
@@ -4968,7 +4968,7 @@ tbody.collapse.show {
 }
 
 .card-header {
-  padding: 0.25rem 0.75rem;
+  padding: 0.75rem 1.25rem;
   margin-bottom: 0;
   background-color: #f7f7f9;
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
@@ -4979,7 +4979,7 @@ tbody.collapse.show {
 }
 
 .card-footer {
-  padding: 0.25rem 0.75rem;
+  padding: 0.75rem 1.25rem;
   background-color: #f7f7f9;
   border-top: 1px solid rgba(0, 0, 0, 0.125);
 }
@@ -4989,15 +4989,15 @@ tbody.collapse.show {
 }
 
 .card-header-tabs {
-  margin-right: -0.375rem;
-  margin-bottom: -0.25rem;
-  margin-left: -0.375rem;
+  margin-right: -0.625rem;
+  margin-bottom: -0.75rem;
+  margin-left: -0.625rem;
   border-bottom: 0;
 }
 
 .card-header-pills {
-  margin-right: -0.375rem;
-  margin-left: -0.375rem;
+  margin-right: -0.625rem;
+  margin-left: -0.625rem;
 }
 
 .card-primary {
@@ -5240,7 +5240,7 @@ tbody.collapse.show {
   .card-columns .card {
     display: inline-block;
     width: 100%;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.75rem;
   }
 }
 
@@ -6614,7 +6614,7 @@ button.close {
 }
 
 .bg-faded {
-  background-color: #e6e6e6;
+  background-color: #f7f7f7;
 }
 
 .bg-primary {
@@ -6663,12 +6663,12 @@ a.bg-danger:hover {
 }
 
 .bg-inverse {
-  background-color: #009688 !important;
+  background-color: #292b2c !important;
 }
 
 a.bg-inverse:focus,
 a.bg-inverse:hover {
-  background-color: #00635a !important;
+  background-color: #101112 !important;
 }
 
 .border-0 {

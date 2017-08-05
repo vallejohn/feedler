@@ -3,9 +3,6 @@
 @section('content')
     <div class="col-lg-8 offset-2">
         <div class="card">
-            <div class="card-header">
-                Create
-            </div>
             <div class="card-block">
                 <form action="/posts" method="post">
 

@@ -15,3 +15,8 @@ Route::get('/', 'HomeController@index');
 Route::resource('posts', 'PostController'); 
 
 Auth::routes();
+
+Route::prefix('manage')->group(function(){
+    Route::get('dashboard', 'ManageController@dashboard')->name('manage.dashboard');
+    Route::get('posts', 'ManageController@posts')->name('manage.posts');
+});
