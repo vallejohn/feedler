@@ -9,7 +9,7 @@
         <ul class="navbar-nav mr-auto">
             @if (Auth::check())
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link" href="/">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Messages</a>

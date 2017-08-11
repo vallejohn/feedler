@@ -2,7 +2,7 @@
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarExample" aria-controls="navbarExample" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand" href="#">Feedler</a>
+    <a class="navbar-brand" href="/">Feedler</a>
     <div class="collapse navbar-collapse" id="navbarExample">
         <ul class="sidebar-nav navbar-nav">
             <li class="nav-item active">

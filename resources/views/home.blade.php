@@ -64,8 +64,8 @@
 
             {{-- Card Post --}}
             <div class="card mb-4">
-                <img class="card-img-top" style="height:180px"
-                     src="http://www.dickson-constant.com/medias/images/catalogue/api/m654-grey-680.jpg"
+                <img class="card-img-top img-fluid"
+                     src="http://i2.cdn.cnn.com/cnnnext/dam/assets/170804153952-heroin-ohio-5-sheriff-overlay-tease.jpg"
                      alt="Card image cap">
                 <div class="card-block">
                     <h4 class="card-title">Praesent eu tellus quis orci fermentum sollicitudin</h4>
